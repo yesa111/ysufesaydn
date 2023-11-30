@@ -114,6 +114,11 @@ footer {
     text-align: center; /* Center the link horizontally */
     padding: 20px 0; /* Add some vertical padding */
 }
+   
+ #Artstation-link a {
+font-size: 2em; /* Make the font larger */
+  color: rgb(255, 255, 0)129) 51)000; /* Change the color of the link */
+    }
 
 
 /* Existing styles.css content */
