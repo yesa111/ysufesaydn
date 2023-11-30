@@ -114,7 +114,7 @@ footer {
 
 /* Motivation Letter Styles */
 #motivation-letter {
-    font-family: 'Trebuchet MS', serif;
+    font-family: 'Roboto Mono', serif;
     line-height: 1.6;
     color: #d7d7d7;
     max-width: 800px; /* Limit the width of the content */
@@ -136,6 +136,9 @@ footer {
     text-indent: 30px; /* Indent the first line of each paragraph */
 }
 
-#motivation-letter img {
-    max-width: 100%;
-
+#about-me {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    line-height: 1.6;
+    text-align: center;
+  }
