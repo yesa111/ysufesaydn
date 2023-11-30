@@ -110,6 +110,12 @@ footer {
     color: rgb(255, 255, 0)129) 51)000; /* Change the color of the link */
 }
 
+#Artstation-link {
+    text-align: center; /* Center the link horizontally */
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+
 /* Existing styles.css content */
 
 /* Motivation Letter Styles */
