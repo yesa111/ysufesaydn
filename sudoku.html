@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ysufesaydn.space</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ysufesaydn.space</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="P5.JavaScript.html">P5.JS</a></li>
+                <li><a href="with AI.html">With AI</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="my music.html">my music</a></li>
+                <li><a href="sudoku.html">sudoku</a></li>
+                <a href="llama-chat-main/">ai</a>
+            </ul>
+        
+
+            <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+           
+    background-size: 300px 400px; 
+    color: rgb(255, 0, 0);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+        }
+        #board {
+            border-collapse: collapse;
+        }
+        #board td {
+            border: 1px solid #fbff00;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: rgb(246, 255, 0);
+        }
+    </style>
+</head>
+<body>
+
+<table id="board"></table>
+<p id="message"></p>
+
+<script>
+let board = [
+    ['5', '3', '.', '.', '7', '.', '.', '.', '.'],
+    ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+    ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+    ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+    ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+    ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+    ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
+    ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+    ['.', '.', '.', '.', '8', '.', '.', '7', '9']
+];
+
+function drawBoard() {
+    let html = '';
+    for (let i = 0; i < 9; i++) {
+        html += '<tr>';
+        for (let j = 0; j < 9; j++) {
+            html += '<td>' + (board[i][j] !== '.' ? board[i][j] : '') + '</td>';
+        }
+        html += '</tr>';
+        
+    }
+    document.getElementById('board').innerHTML = html;
+}
+
+drawBoard();
+
+document.getElementById('board').addEventListener('click', function(e) {
+    let row = e.target.parentNode.rowIndex;
+    let col = e.target.cellIndex;
+    let value = prompt("sayı gir (1-9):");
+    board[row][col] = value;
+    drawBoard();
+});
+</script>
+
+</body>
+</html>
