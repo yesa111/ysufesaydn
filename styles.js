@@ -2,8 +2,8 @@ body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
-  background-color: #000000; /* This is black */
-  color: #FF0000; /* This is red */
+  background-color: #000000; 
+  color: #FF0000; 
 }
 
 .container {
@@ -15,16 +15,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #0000CD; /* This is medium blue */
+  color: #0000CD;
 }
 
 a {
-  color: #FF0000; /* This is red */
+  color: #FF0000; 
   text-decoration: none;
 }
 
 a:hover {
-  color: #8B0000; /* This is dark red */
+  color: #8B0000; 
 }
 
 header {

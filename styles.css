@@ -2,8 +2,8 @@ body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* This is black */
-    color: #FF0000; /* This is red */
+    background-color: #000000; 
+    color: #FF0000; 
 }
 #animation {
     position: fixed;
@@ -33,16 +33,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: rgb(61, 26, 255); /* This is medium blue */
+    color: rgb(61, 26, 255); 
 }
 
 a {
-    color: #ff0000; /* This is red */
+    color: #ff0000;
     text-decoration: none;
 }
 
 a:hover {
-    color: #8B0000; /* This is dark red */
+    color: #8B0000; 
 }
 
 header {
@@ -101,50 +101,50 @@ footer {
 
 
 #instagram-link {
-    text-align: center; /* Center the link horizontally */
-    padding: 20px 0; /* Add some vertical padding */
+    text-align: center; 
+    padding: 20px 0; 
 }
 
 #instagram-link a {
-    font-size: 2em; /* Make the font larger */
-    color: rgb(255, 255, 0)129) 51)000; /* Change the color of the link */
+    font-size: 2em; 
+    color: rgb(255, 255, 0)129) 51)000; 
 }
 
 #Artstation-link {
-    text-align: center; /* Center the link horizontally */
-    padding: 20px 0; /* Add some vertical padding */
+    text-align: center; 
+    padding: 20px 0; 
 }
    
  #Artstation-link a {
-font-size: 2em; /* Make the font larger */
-  color: rgb(255, 255, 0)129) 51)000; /* Change the color of the link */
+font-size: 2em; 
+  color: rgb(255, 255, 0)129) 51)000; 
     }
 
 
-/* Existing styles.css content */
 
-/* Motivation Letter Styles */
+
+
 #motivation-letter {
     font-family: 'Roboto Mono', serif;
     line-height: 1.6;
     color: #d7d7d7;
-    max-width: 800px; /* Limit the width of the content */
-    margin: 0 auto; /* Center the content horizontally */
-    padding: 20px; /* Add some space around the content */
-    background-color: rgb(57, 3, 51))f4f; /* Add a background color */
-    border-radius: 10px; /* Round the corners */
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: rgb(57, 3, 51))f4f; 
+    border-radius: 10px; 
 }
 
 #motivation-letter h2 {
     color: #fbff00;
     margin-bottom: 20px;
-    text-align: center; /* Center the title */
+    text-align: center; 
 }
 
 #motivation-letter p {
     color: rgb(255, 255, 255);
     margin-bottom: 20px;
-    text-indent: 30px; /* Indent the first line of each paragraph */
+    text-indent: 30px; 
 }
 
 #about-me {
