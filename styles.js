@@ -2,16 +2,52 @@ body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
-  background-color: #000000; 
-  color: #FF0000; 
+  background-color: #ffffff; /* Arka plan rengini beyaz yapar */
+  color: #000000; /* Metin rengini siyah yapar */
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); /* Arka plan rengini siyah yapar */
   padding: 20px;
   border-radius: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000000; /* Başlık rengini siyah yapar */
+}
+
+a {
+  color: #000000; /* Bağlantı rengini siyah yapar */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #555555; /* Bağlantı hover rengini gri yapar */
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.7); /* Header arka plan rengini beyaz yapar */
+  color: #000000; /* Header metin rengini siyah yapar */
+}
+
+nav ul li a {
+  color: #000000; /* Menü bağlantı rengini siyah yapar */
+}
+
+nav ul li a:hover {
+  color: #555555; /* Menü bağlantı hover rengini gri yapar */
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.7); /* Footer arka plan rengini beyaz yapar */
+  color: #000000; /* Footer metin rengini siyah yapar */
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,16 +68,6 @@ header {
   color: white;
   padding: 10px;
   text-align: center;
-}
-
-footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 let angle = 0;
 let w = 24;
