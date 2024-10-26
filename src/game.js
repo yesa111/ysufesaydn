@@ -929,4 +929,4 @@ function setup_game() {
 
     chaingun = merge_sprites(chaingun);
     chaingun.recoil = ZERO;
-}
+}a
