@@ -860,6 +860,8 @@ var shell;
 var enemy_bullet;
 var my_body;
 function setup_game() {
+    let chaingun = [];
+
     sphere = m => lathe([0, -.5,
                              .35, .15,
                              .15, .35,
@@ -869,38 +871,33 @@ function setup_game() {
                             8, 0, false)
     explosion = sphere(1)
 
-    shell = lathe([.5, 0,
-                   0, .05,
-                   -.1, 0,
-                   0, .01,
-                   0, 1.5,
-                   0, .01,
-                   -.05, 0,
-                   0, -1.4
+    shell = lathe([1.0, 0,
+                   0, .2,
+                   -.3, 0,
+                   0, .03,
+                   0, 3.0,
+                   0, .03,
+                   -.2, 0,
+                   0, -2.5
                   ],
-                  8, 0, true);
+                  20, 0, true);
 
-    enemy_bullet = lathe([.2, 0,
-                          .2, 2,
-                          .4, 1,
-                          .4, .4,
-                          0, .6,
-                          -.4, .4,
-                          -.4, .2]
+    enemy_bullet = lathe([.6, 0,
+                          .6, 6,
+                          .8, 4,
+                          .8, .8,
+                          0, 1.5,
+                          -.8, .8,
+                          -.8, .6]
                         , 32, 0, true,
                          x => mat_vector_product(matrix_rotate_xz(-Math.PI/2),x));
 
     
-    [2,5,6].map(x=>
-                chaingun.push(new Sprite(make_cylinder(NewVector(1.8,1.8,.5)),
-                                         NewVector(x,0,0),
-                                         null, false, [.7, .7, .7])));
-    
-    range(8).map(x=> {
-        chaingun.push(new Sprite(make_cylinder(NewVector(.5,.5,8.5)),
-                                 mat_vector_product(matrix_rotate_yz(x*Math.PI/4),Y_DIR), null, false))
-    });
-    
-    chaingun = merge_sprites(chaingun)
-    chaingun.recoil = ZERO;
-}
+    const texture = new Image();
+    texture.src = 'https://imgur.com/DbmHZTc.jpg';
+    texture.onload = () => {
+        [1,1,1].map(x =>
+            chaingun.push(new Sprite(makecube(NewVector(0.2,3,5.5,3,3)),
+                                     NewVector(x,x,x,x),
+                                     null, false, [.1, .1, .1], texture)));
+    };
