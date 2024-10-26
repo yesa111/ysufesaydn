@@ -862,7 +862,7 @@ var my_body;
 let texture;
 
 function preload() {
-    texture = loadImage('C:\Users\Acer\Desktop\2023 jpeg\ysufesaydn\src/insta.png'); // Doku dosyasını yükleyin
+    texture = loadImage('C:/Users/Acer/Desktop/2023 jpeg/ysufesaydn/src/insta.png'); // Doku dosyasını yükleyin
 }
 
 function setup_game() {
@@ -907,6 +907,7 @@ function setup_game() {
             [.1, .1, .1]
         ))
     );
+}
 
     range(1).map(x => {
         chaingun.push(new Sprite(
