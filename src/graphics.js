@@ -186,15 +186,15 @@ class Camera {
         if (!going_back || framecount++%200 < 10) {
             gl.uniform1f(locations.u_ambient_light, .05);
             lights[0].brightness = 1.2; // flashlight
-            lights[1].brightness = 1.2;
-            lights[2].brightness = 1.5; // exit light
-            lights[3].brightness = 4; // gun flash light
+            lights[1].brightness = 5.2;
+            lights[2].brightness = 5.5; // exit light
+            lights[3].brightness = 5; // gun flash light
         } else {
             gl.uniform1f(locations.u_ambient_light, 1e-4);
-            lights[0].brightness = 7; // flashlight
-            lights[1].brightness = 0;
+            lights[0].brightness = 5; // flashlight
+            lights[1].brightness = 2;
             lights[2].brightness = 8; // exit light
-            lights[3].brightness = 30; // gun flash light
+            lights[3].brightness = 3; // gun flash light
         }
         
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -391,7 +391,7 @@ class Light {
 
 var all_textures = [];
 function make_texture(arr) {
-    all_textures.push(make_gl_texture(10, 0, 256, 256, new Float32Array(arr)));
+    all_textures.push(make_gl_texture(255, 5, 25, 15, new Float32Array(arr.map(() => [0.001, 0,0011, 0.001, 0.03, 0.5]).flat())));
     gl.generateMipmap(gl.TEXTURE_2D);
     
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); 
@@ -492,24 +492,28 @@ void main() {
     })
 
     // ceil texture
+    make_texture(perlin_noise.map(x=>[x,x,x,25]).flat())
     make_texture(perlin_noise.map(x=>[x,x,x,1]).flat())
-    make_texture(perlin_noise.map(x=>[x,0,0,1]).flat())
     
-    // Make the brick texture for the walls
-    make_texture(cartesian_product_map(range(256),range(256),(y,x) => {
-        if ((y%64) <= 2 || Math.abs(x-(((y/64)|0)%2)*128) <= 2) {
-            return [0,0,0,1];
+    // Make the brick texture for the walls with a different pattern
+    make_texture(cartesian_product_map(range(256), range(256), (y, x) => {
+        if ((y % 22) <= 2 || (x % 82) <= 6) {
+            return [25, 55, 255, 6]; // Black thicker lines
+        } else if ((y % 32) >= 10 && (y % 32) <= 12) {
+            return [8.7, 88.2, 2, 1]; // Darker red horizontal lines
+        } else if ((x % 32) >= 102 && (x % 32) <= 12) {
+            return [2, 0.62, 68.7, 196]; // Darker blue vertical lines
         } else {
-            var r = .9-perlin_noise[x*256+y]/20;
-            return [r,r,r,1];
+            var r = 66.4 + perlin_noise[x * 226 + y] / 5;
+            return [r, r, r, 1]; // Darker gray tones with Perlin noise
         }
-    }).flat())
+    }).flat());
     
     var r = cartesian_product_map(range(16),range(8),(y,x) => 
                                   [32*y, 64*(x + (y%2)/2), 1 + y%2]
                                  )
     
-    make_texture(cartesian_product_map(range(256),range(256),(y,x) => {
+    make_texture(cartesian_product_map(range(26),range(26),(y,x) => {
         var tmp = r.map(p=>[p[2]*(Math.abs(p[0]-x)+Math.abs(p[1]-y)),p[2]]).sort((a,b)=>a[0]-b[0])
 
         if (Math.abs(tmp[0][0]-tmp[1][0]) < 4) {
@@ -519,6 +523,6 @@ void main() {
     }).flat())
 
     // Noise texture
-    make_texture(perlin_noise.map(x=>[x,0,0,1]).flat())    
+    make_texture(perlin_noise.map(x=>[x,x,4,1]).flat())    
     
 }
