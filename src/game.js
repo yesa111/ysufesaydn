@@ -891,14 +891,10 @@ function setup_game() {
                          x => mat_vector_product(matrix_rotate_xz(-Math.PI/2),x));
 
     
-    const texture = new Image();
-    texture.src = 'https://imgur.com/DbmHZTc.jpg';
-    texture.onload = () => {
-        [1,1,1].map(x =>
-            chaingun.push(new Sprite(makecube(NewVector(0.2,3,5.5,3,3)),
-                                     NewVector(x,x,x,x),
-                                     null, false, [.1, .1, .1], texture)));
-    };
+    [1,1,1].map(x=>
+                chaingun.push(new Sprite(makecube(NewVector(0.2,3,5.5,3,3)),
+                                         NewVector(x,x,x,x),
+                                         null, false, [.1, .1, .1])));
     
     range(8).map(x=> {
         chaingun.push(new Sprite(make_cylinder(NewVector(.1, 1,6.3)),
