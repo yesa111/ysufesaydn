@@ -858,8 +858,7 @@ var explosion;
 var sphere;
 var shell;
 var enemy_bullet;
-var my_body;
-let texture;
+var my_body;;
 
 function preload() {
     texture = loadImage('C:/Users/Acer/Desktop/doom/src/insta.png'); // Doku dosyasını yükleyin
@@ -874,7 +873,7 @@ function setup_game() {
                          -.35, .15,
                         ].map(x => x * m),
                         8, 0, false);
-    explosion = sphere(0);
+    explosion = sphere(1);
 
     shell = lathe([1.0, 0,
                    0, .2,
@@ -885,13 +884,13 @@ function setup_game() {
                    -.2, 0,
                    0, -2.5
                   ],
-                  20, 0, true);
+                  20, 1, true);
 
-    enemy_bullet = lathe([.6, 0,
+    enemy_bullet = lathe([.6, 1,
                           .6, 6,
                           .8, 4,
                           .8, .8,
-                          0, 1.5,
+                          1, 1.5,
                           -.8, .8,
                           -.8, .6],
                         32, 0, true,
@@ -902,7 +901,7 @@ function setup_game() {
         chaingun.push(new Sprite(
             makecube(NewVector(0.2, 3, 5.5, 3, 3)),
             NewVector(x, x, x, x),
-            texture,  // Doku burada uygulanır
+            null,  
             false,
             [.1, .1, .1]
         ))
@@ -916,6 +915,17 @@ function setup_game() {
             false
         ));
     });
+
+    // Add text in the center of the geometric shape
+    chaingun.push(new Sprite(
+        makecube(NewVector(0.5, 0.6, 0.5)),
+        NewVector(0.9, 1, 1.2),
+        null,
+        false,
+        [2, 2, 2],
+        "Text in Center",
+        [222, 222, 222] // White color for the text
+    ));
 
     chaingun = merge_sprites(chaingun);
     chaingun.recoil = ZERO;
