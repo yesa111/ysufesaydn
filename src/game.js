@@ -862,7 +862,7 @@ var my_body;
 let texture;
 
 function preload() {
-    texture = loadImage('src/insta.png'); // Doku dosyasını yükleyin
+    texture = loadImage('https://i.imgur.com/w1KCct2.jpg'); // Doku dosyasını yükleyin
 }
 
 function setup_game() {
