@@ -38,12 +38,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    z-index: -10; /* Resmin animasyonun önünde görünmesini sağlar */
+    z-index: -10; 
 }
 
 .fullscreen-bg img {
-    width: 600px; /* İsteğe bağlı: resmin boyutunu ayarlayın */
-    height: 750px; /* İsteğe bağlı: resmin boyutunu ayarlayın */
+    width: 600px; 
+    height: 750px; 
 }
 }
 .container {
@@ -68,7 +68,7 @@ a:hover {
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     color: rgb(255, 0, 0);
     padding: 10px;
     text-align: center;
